@@ -186,88 +186,8 @@ DEFINE OBJECT LANDPART15               // Object number -183
 DEFINE OBJECT SECURITY_HUT             // Object number -184
 DEFINE OBJECT COLUMANSION_WALL         // Object number -185
 
-DEFINE MISSIONS 40
-DEFINE MISSION 0 AT @M00_INTRO          		// Formerly INTRO
-DEFINE MISSION 1 AT @M01_HOSPITALHELP			// Formerly HEALTH           
-DEFINE MISSION 2 AT @M02_POLICEHELP			// Formerly WANTED           
-DEFINE MISSION 3 AT @M03_DIABLODESTRUCTION		// Formerly RC1              
-DEFINE MISSION 4 AT @M04_MAFIAMASSACRE			// Formerly RC2
-DEFINE MISSION 5 AT @M05_RUMPORAMPAGE			// Formerly RC3                
-DEFINE MISSION 6 AT @M06_CASINOCALAMITY			// Formerly RC4                
-DEFINE MISSION 7 AT @M07_PATRIOTPLAYGROUND		// Formerly T4X4_1           
-DEFINE MISSION 8 AT @M08_ARIDEINTHEPARK			// Formerly T4X4_2           
-DEFINE MISSION 9 AT @M09_GRIPPED			// Formerly T4X4_3           
-DEFINE MISSION 10 AT @M10_MULTISTOREYMAYHEM		// Formerly MAYHEM          
-DEFINE MISSION 11 AT @M11_PARAMEDIC			// Formerly AMBULAN         
-DEFINE MISSION 12 AT @M12_FIREFIGHTER			// Formerly FIRETRU         
-DEFINE MISSION 13 AT @M13_VIGILANTE			// Formerly COPCAR          
-DEFINE MISSION 14 AT @M14_TAXI				// Formerly TAXI            
-DEFINE MISSION 15 AT @M15_THECROOK			// Formerly MEAT1           
-DEFINE MISSION 16 AT @M16_THETHIEVES			// Formerly MEAT2           
-DEFINE MISSION 17 AT @M17_THEWIFE			// Formerly MEAT3           
-DEFINE MISSION 18 AT @M18_HERLOVER			// Formerly MEAT4           
-DEFINE MISSION 19 AT @M19_GIVEMELIBERTY			// Formerly EIGHT           
-DEFINE MISSION 20 AT @M20_DONTSPANKMABITCHUP		// Formerly LUIGI2           
-DEFINE MISSION 21 AT @M21_DRIVEMISTYFORME		// Formerly LUIGI3          
-DEFINE MISSION 22 AT @M22_PUMPACTIONPIMP		// Formerly LUIGI4          
-DEFINE MISSION 23 AT @M23_THEFUZZBALL			// Formerly LUIGI5          
-DEFINE MISSION 24 AT @M24_MIKELIPSLASTLUNCH		// Formerly JOEY1           
-DEFINE MISSION 25 AT @M25_FAREWELLCHUNKYLEECHONG	// Formerly JOEY2           
-DEFINE MISSION 26 AT @M26_VANHEIST			// Formerly JOEY3           
-DEFINE MISSION 27 AT @M27_CIPRIANISCHAUFFEUR		// Formerly JOEY4           
-DEFINE MISSION 28 AT @M28_DEADSKUNKINTHETRUNK		// Formerly JOEY5           
-DEFINE MISSION 29 AT @M29_THEGETAWAY			// Formerly JOEY6           
-DEFINE MISSION 30 AT @M30_TAKINGOUTTHELAUNDRY		// Formerly TONI1           
-DEFINE MISSION 31 AT @M31_THEPICKUP			// Formerly TONI2           
-DEFINE MISSION 32 AT @M32_SALVATORESCALLEDAMEETING	// Formerly TONI3           
-DEFINE MISSION 33 AT @M33_TRIADSANDTRIBULATIONS		// Formerly TONI4           
-DEFINE MISSION 34 AT @M34_BLOWFISH			// Formerly TONI5           
-DEFINE MISSION 35 AT @M35_CHAPERONE			// Formerly FRANK1          
-DEFINE MISSION 36 AT @M36_CUTTINGTHEGRASS		// Formerly FRANK2          
-DEFINE MISSION 37 AT @M37_BOMBDABASEACTI		// Formerly FRANK21         
-DEFINE MISSION 38 AT @M38_BOMBDABASEACTII		// Formerly FRANK3          
-DEFINE MISSION 39 AT @M39_LASTREQUESTS			// Formerly FRANK4          
-//DEFINE MISSION 40 AT @M40_TURISMO			// Formerly DIABLO1         
-//DEFINE MISSION 41 AT @M41_ISCREAMYOUSCREAM		// Formerly DIABLO2         
-//DEFINE MISSION 42 AT @M42_TRIALBYFIRE			// Formerly DIABLO3         
-//DEFINE MISSION 43 AT @M43_BIGNVEINY			// Formerly DIABLO4         
-//DEFINE MISSION 44 AT @M44_SAYONARASALVATORE		// Formerly ASUKA1          
-//DEFINE MISSION 45 AT @M45_UNDERSURVEILLANCE		// Formerly ASUKA2          
-//DEFINE MISSION 46 AT @M46_PAPARAZZIPURGE		// Formerly ASUKA3          
-//DEFINE MISSION 47 AT @M47_PAYDAYFORRAY			// Formerly ASUKA4          
-//DEFINE MISSION 48 AT @M48_TWOFACEDTANNER		// Formerly ASUKA5          
-//DEFINE MISSION 49 AT @M49_KANBUBUSTOUT			// Formerly KENJI1          
-//DEFINE MISSION 50 AT @M50_GRANDTHEFTAUTO		// Formerly KENJI2          
-//DEFINE MISSION 51 AT @M51_DEALSTEAL			// Formerly KENJI3          
-//DEFINE MISSION 52 AT @M52_SHIMA				// Formerly KENJI4          
-//DEFINE MISSION 53 AT @M53_SMACKDOWN			// Formerly KENJI5          
-//DEFINE MISSION 54 AT @M54_SILENCETHESNEAK		// Formerly RAY1            
-//DEFINE MISSION 55 AT @M55_ARMSSHORTAGE			// Formerly RAY2            
-//DEFINE MISSION 56 AT @M56_EVIDENCEDASH			// Formerly RAY3            
-//DEFINE MISSION 57 AT @M57_GONEFISHING			// Formerly RAY4            
-//DEFINE MISSION 58 AT @M58_PLASTERBLASTER		// Formerly RAY5            
-//DEFINE MISSION 59 AT @M59_MARKEDMAN			// Formerly RAY6            
-//DEFINE MISSION 60 AT @M60_LIBERATOR			// Formerly LOVE1           
-//DEFINE MISSION 61 AT @M61_WAKAGASHIRAWIPEOUT		// Formerly LOVE2           
-//DEFINE MISSION 62 AT @M62_ADROPINTHEOCEAN		// Formerly LOVE3           
-//DEFINE MISSION 63 AT @M63_BLINGBLINGSCRAMBLE		// Formerly YARD1           
-//DEFINE MISSION 64 AT @M64_UZIRIDER			// Formerly YARD2           
-//DEFINE MISSION 65 AT @M65_GANGCARROUNDUP		// Formerly YARD3           
-//DEFINE MISSION 66 AT @M66_KINGDOMCOME			// Formerly YARD4           
-//DEFINE MISSION 67 AT @M67_GRANDTHEFTAERO		// Formerly LOVE4           
-//DEFINE MISSION 68 AT @M68_ESCORTSERVICE			// Formerly LOVE5           
-//DEFINE MISSION 69 AT @M69_DECOY				// Formerly LOVE6           
-//DEFINE MISSION 70 AT @M70_LOVESDISAPPERANCE		// Formerly LOVE7           
-//DEFINE MISSION 71 AT @M71_BAIT				// Formerly ASUSB1          
-//DEFINE MISSION 72 AT @M72_ESPRESSO2GO			// Formerly ASUSB2          
-//DEFINE MISSION 73 AT @M73_SAM				// Formerly ASUSB3          
-//DEFINE MISSION 74 AT @M74_UZIMONEY			// Formerly HOOD1           
-//DEFINE MISSION 75 AT @M75_TOYMINATOR			// Formerly HOOD2           
-//DEFINE MISSION 76 AT @M76_RIGGEDTOBLOW			// Formerly HOOD3           
-//DEFINE MISSION 77 AT @M77_BULLIONRUN			// Formerly HOOD4           
-//DEFINE MISSION 78 AT @M78_RUMBLE			// Formerly HOOD5           
-//DEFINE MISSION 79 AT @M79_THEEXCHANGE			// Formerly CAT11          
-
+DEFINE MISSIONS 1
+DEFINE MISSION 0 AT @M00_PATRIOT    	// Patriot mission      
 CONST
 // <constant name> = <constant value>
 
@@ -485,84 +405,118 @@ END
 
 
 //-------------MAIN---------------
+
 03A4: name_thread 'MAIN' 
-0053: create_player #NULL at 811.875 -939.9375 35.75 store_to $PLAYER_CHAR 
+0053: create_player #NULL at 811.875 -939.9375 35.75 store_to $PLAYER_CHAR
+016E: override_next_restart at 811.875 -939.9375 35.75 angle 180.0
 0171: set_player $PLAYER_CHAR z_angle_to 180.0 
-01F5: $PLAYER_ACTOR = create_emulated_actor_from_player $PLAYER_CHAR 
-gosub @DEBUG_VARIABLES
-042C: set_total_missions_to 73 
+01F5: $PLAYER_ACTOR = create_emulated_actor_from_player $PLAYER_CHAR
+01B4: set_player $PLAYER_CHAR controllable 0
+042C: set_total_missions_to 1 
 030D: set_total_mission_points_to 154 
-if
-	$DEBUGUNLOCKISLANDS == 1
-then
-	01F0: set_max_wanted_level_to 6
-else
-	01F0: set_max_wanted_level_to 4 
-end
-
+01F0: set_max_wanted_level_to 6
 gosub @VARIABLE_INIT
-gosub @SETUP_DYNAMIC_OBJECTS
-gosub @INIT_SPECIAL_OBJECTS
-gosub @GARAGES_INIT
-gosub @TRAFFIC_INFO
-gosub @CAR_GENERATORS
-gosub @MAIN_PICKUPS
-gosub @HIDDEN_PACKAGES
-
 gosub @INIT_SOUND_LOOPS
+0111: set_wasted_busted_check_to 0
 
-0111: set_wasted_busted_check_to 1
+01B6: set_weather WEATHER_CLOUDY
+00C0: set_current_time 4 20  
 
-gosub @INIT_MISSION_LOCATIONS
-gosub @INIT_THREADS
-
-
-// Targetable objects require player to be defined!
-035D: make_object $FAKETARGET1 targetable 
-035D: make_object $FAKETARGET2 targetable 
-035D: make_object $FAKETARGET3 targetable 
-if 
-	0256:   is_player $PLAYER_CHAR defined 
-then
-	01B4: set_player $PLAYER_CHAR controllable 0
-end
 0169: set_fade_color 0 0 0 
-016A: fade 0 for 0 ms 
-0417: start_mission M00_INTRO
-004F: create_thread @PORTLAND_SAVE
-004F: create_thread @STAUNTON_SAVE
-004F: create_thread @SSV_SAVE
-004F: create_thread @PORTLAND_RESTART
-004F: create_thread @STAUNTON_RESTART
-004F: create_thread @SSV_RESTART
-004F: create_thread @WASTED_LOOP
-004F: create_thread @BUSTED_LOOP
-if
-	0256:   is_player $PLAYER_CHAR defined 
-then
-	01B4: set_player $PLAYER_CHAR controllable 1
+016A: fade 0 for 0 ms
+03CB: load_scene 807.0 -937.0 36.5625
+
+0247: request_model #PATRIOT
+038B: load_all_models_now 
+03AF: set_streaming 1 
+03F7: load_island_data 1
+043C: set_game_sounds_fade 0  
+wait 1000
+0395: clear_area 1 at 812.0 -945.5 range 35.75 300 
+00A5: create_car #PATRIOT at 812.0 -945.5 35.75 store_to $CAR_PATRIOT
+0229: set_car $CAR_PATRIOT color_to 33 51
+fade 1 for 1000 ms
+while fading
+wait 0 ms
 end
+0169: set_fade_color 255 255 255
+
+0239: actor $PLAYER_ACTOR run_to 812.0 -945.5
+01B4: set_player $PLAYER_CHAR controllable 0
+01D5: actor $PLAYER_ACTOR go_to_and_drive_car $CAR_PATRIOT
+wait 1000
+00BA: print_big 'T4X4_1' time 5000 style 2  // 'PATRIOT PLAYGROUND'
+wait 2000
+fade 0 for 1000 ms
+wait 1000
+043C: set_game_sounds_fade 1
+0417: start_mission M00_PATRIOT
+
+
 while true
-	wait 1000 ms
-	gosub @CHECK_INFO_PICKUPS
+wait 1000 ms
+if 
+    0038: $ONMISSION == 0
+then
+    gosub @handle_idle
+    0417: start_mission M00_PATRIOT
+end
+
 end // main loop that constantly runs
 
+
+:handle_idle
+0055: put_player $PLAYER_CHAR at 811.875 -939.9375 35.75
+016E: override_next_restart at 811.875 -939.9375 35.75 angle 180.0
+01EB: set_car_density_to 0.0
+0169: set_fade_color 0 0 0
+fade 0 for 1000 ms
+while fading
+wait 0 ms
+end
+fade 1 for 1000 ms
+0249: release_model #PATRIOT
+03CB: load_scene 807.0 -937.0 36.5625
+01C3: remove_references_to_car $CAR_PATRIOT
+0247: request_model #PATRIOT
+038B: load_all_models_now 
+wait 100
+0395: clear_area 1 at 812.0 -945.5 range 35.75 300 
+00A5: create_car #PATRIOT at 812.0 -945.5 35.75 store_to $CAR_PATRIOT
+0229: set_car $CAR_PATRIOT color_to 33 51
+0169: set_fade_color 255 255 255
+03CB: load_scene 807.0 -937.0 36.5625
+    //0055: put_player $PLAYER_CHAR at 811.875 -939.9375 35.75
+0239: actor $PLAYER_ACTOR run_to 812.0 -945.5
+01B4: set_player $PLAYER_CHAR controllable 0
+01D5: actor $PLAYER_ACTOR go_to_and_drive_car $CAR_PATRIOT
+wait 1000
+00BA: print_big 'T4X4_1' time 5000 style 2  // 'PATRIOT PLAYGROUND'
+wait 5000
+020A: set_car $CAR_PATRIOT door_status_to CARLOCK_LOCKED
+0169: set_fade_color 255 255 255
+fade 0 for 1000 ms
+043C: set_game_sounds_fade 1
+01EB: set_car_density_to 1.0
+0369: put_player $PLAYER_CHAR in_car $CAR_PATRIOT
+return
+
 //Main threads
-{$INCLUDE camera.sc}   	//CAMERA
-{$INCLUDE car_gen.sc}  	//CAR_GENERATORS
+//{$INCLUDE camera.sc}   	//CAMERA
+//{$INCLUDE car_gen.sc}  	//CAR_GENERATORS
 {$INCLUDE debug.sc}    	//DEBUG_VARIABLES - STARTER - COORDS
-{$INCLUDE gates.sc}    	//FISH_FACTORY_GATE - DOG_FOOD_FACTORY_GATE - POLICE_GATE1 - POLICE_GATE2 - COLOMBIAN_GATE - PHILS_GATE - COLOMBIAN_GATE2
-{$INCLUDE genstuf.sc}  	//GENSTUFF - COBBLERS - CHECK_INFO_PICKUP - CHECK_INFO_PICKUP_2 - IND_AMMU - FISH_FACTORY_GEN - TRAMP_TUNNEL - IND_SOUND - DOG_SOUND - COM_AMMU - COM_CAR_PARK
-{$INCLUDE help.sc}	//LUIGI_MESSAGE - BIKE_HELP - PISTOL_MESSAGE - UZI_MESSAGE - IMP_EXP_PAGER - EMERGENCY_CRANE_PAGER - VAN_HEIST_GARAGE_PAGER - JOEYS_BUGGY_LOOP - TONI5_FLAMES_LOOP - BLOB_HELP_LOOP - TONI4_PAGER_LOOP - TONI5_PAGER_LOOP - CLOSE_FUZZ_DOORS - CLOSE_ASUKA1_DOOR
-{$INCLUDE hj.sc}	//INSANE_STUNT
-{$INCLUDE import.sc}   	//IE_GARAGE_IND - EMERGENCY_CRANE - IE_GARAGE_SUB - PACKAGE_SNIFFER
+//{$INCLUDE gates.sc}    	//FISH_FACTORY_GATE - DOG_FOOD_FACTORY_GATE - POLICE_GATE1 - POLICE_GATE2 - COLOMBIAN_GATE - PHILS_GATE - COLOMBIAN_GATE2
+//{$INCLUDE genstuf.sc}  	//GENSTUFF - COBBLERS - CHECK_INFO_PICKUP - CHECK_INFO_PICKUP_2 - IND_AMMU - FISH_FACTORY_GEN - TRAMP_TUNNEL - IND_SOUND - DOG_SOUND - COM_AMMU - COM_CAR_PARK
+//{$INCLUDE help.sc}	//LUIGI_MESSAGE - BIKE_HELP - PISTOL_MESSAGE - UZI_MESSAGE - IMP_EXP_PAGER - EMERGENCY_CRANE_PAGER - VAN_HEIST_GARAGE_PAGER - JOEYS_BUGGY_LOOP - TONI5_FLAMES_LOOP - BLOB_HELP_LOOP - TONI4_PAGER_LOOP - TONI5_PAGER_LOOP - CLOSE_FUZZ_DOORS - CLOSE_ASUKA1_DOOR
+//{$INCLUDE hj.sc}	//INSANE_STUNT
+//{$INCLUDE import.sc}   	//IE_GARAGE_IND - EMERGENCY_CRANE - IE_GARAGE_SUB - PACKAGE_SNIFFER
 {$INCLUDE init.sc}	//SETUP_DYNAMIC_OBJECTS - INIT_SPECIAL_OBJECTS - GARAGES_INIT - TRAFFIC_INFO - VARIABLE_INIT - INIT_MISSION_LOCATIONS - INIT_THREADS - INIT_SOUND_LOOPS
-{$INCLUDE packages.sc}	//HIDDEN_PACKAGES
-{$INCLUDE pickups.sc}  	//MAIN_PICKUPS - CHECK_INFO_PICKUPS
-{$INCLUDE rampage.sc}  	//KILL_FRENZY
-{$INCLUDE rewards.sc}  	//ALL_REWARDS
-{$INCLUDE save.sc}     	//PORTLAND_SAVE - STAUNTON_SAVE - SSV_SAVE - PORTLAND_RESTART - STAUNTON_RESTART - SSV_RESTART
-{$INCLUDE triggers.sc} 	//All mission triggers
+//{$INCLUDE packages.sc}	//HIDDEN_PACKAGES
+//{$INCLUDE pickups.sc}  	//MAIN_PICKUPS - CHECK_INFO_PICKUPS
+//{$INCLUDE rampage.sc}  	//KILL_FRENZY
+//{$INCLUDE rewards.sc}  	//ALL_REWARDS
+//{$INCLUDE save.sc}     	//PORTLAND_SAVE - STAUNTON_SAVE - SSV_SAVE - PORTLAND_RESTART - STAUNTON_RESTART - SSV_RESTART
+//{$INCLUDE triggers.sc} 	//All mission triggers
 {$INCLUDE usj.sc}      	//USJ
 
 
@@ -573,41 +527,5 @@ end // main loop that constantly runs
 
 
 //Missions
-{$INCLUDE 00_intro.sc} // M00_INTRO
-{$INCLUDE 01_health.sc} // M01_HOSPITALHELP
-{$INCLUDE 02_wanted.sc} // M02_POLICEHELP
-{$INCLUDE 03_rc1.sc} // M03_DIABLODESTRUCTION
-{$INCLUDE 04_rc2.sc} // M04_MAFIAMASSACRE
-{$INCLUDE 05_rc3.sc} // M05_RUMPORAMPAGE
-{$INCLUDE 06_rc4.sc} // M06_CASINOCALAMITY
-{$INCLUDE 07_4x4_1.sc} // M07_PATRIOTPLAYGROUND
-{$INCLUDE 08_4x4_2.sc} // M08_ARIDEINTHEPARK
-{$INCLUDE 09_4x4_3.sc} // M09_GRIPPED
-{$INCLUDE 10_mayhem1.sc} // M10_MULTISTOREYMAYHEM
-{$INCLUDE 11_ambulance.sc} // M11_PARAMEDIC
-{$INCLUDE 12_firetruck.sc} // M12_FIREFIGHTER
-{$INCLUDE 13_copcar.sc} // M13_VIGILANTE
-{$INCLUDE 14_taxi.sc} // M14_TAXI
-{$INCLUDE 15_meat1.sc} // M15_THECROOK
-{$INCLUDE 16_meat2.sc} // M16_THETHIEVES
-{$INCLUDE 17_meat3.sc} // M17_THEWIFE
-{$INCLUDE 18_meat4.sc} // M18_HERLOVER
-{$INCLUDE 19_8ball.sc} // M19_GIVEMELIBERTY
-{$INCLUDE 20_luigi2.sc} // M20_DONTSPANKMABITCHUP
-{$INCLUDE 21_luigi3.sc} // M21_DRIVEMISTYFORME
-{$INCLUDE dummymissions.sc} // M22_PUMPACTIONPIMP  M23_THEFUZZBALL  These don't exist, but need to be defined to avoid screwing up the mission list
-{$INCLUDE 24_joey1.sc} // M24_MIKELIPSLASTLUNCH
-{$INCLUDE 25_joey2.sc} // M25_FAREWELLCHUNKYLEECHONG
-{$INCLUDE 26_joey3.sc} // M26_VANHEIST
-{$INCLUDE 27_joey4.sc} // M27_CIPRIANISCHAUFFEUR
-{$INCLUDE dummymissions2.sc} // M28_DEADSKUNKINTHETRUNK  M29_THEGETAWAY  These don't exist, but need to be defined to avoid screwing up the mission list
-{$INCLUDE 30_toni1.sc} // M30_TAKINGOUTTHELAUNDRY
-{$INCLUDE 31_toni2.sc} // M31_THEPICKUP
-{$INCLUDE 32_toni3.sc} // M32_SALVATORESCALLEDAMEETING
-{$INCLUDE 33_toni4.sc} // M33_TRIADSANDTRIBULATIONS
-{$INCLUDE 34_toni5.sc} // M34_BLOWFISH
-{$INCLUDE 35_frank1.sc} // M35_CHAPERONE
-{$INCLUDE 36_frank2.sc} // M36_CUTTINGTHEGRASS
-{$INCLUDE 37_frank2.1.sc} // M37_BOMBDABASEACTI
-{$INCLUDE 38_frank3.sc} // M38_BOMBDABASEACTII
-{$INCLUDE 39_frank4.sc} // M39_LASTREQUESTS
+{$INCLUDE PP_PATRIOT.sc} // Our new patriot mission
+

@@ -680,72 +680,14 @@ $BARRIERS_BEEN_ADDED = 0
 return
 
 // This sub creates mission markers and pay phones
-:INIT_MISSION_LOCATIONS
-024A: $PHONE_MARTY = create_phone_at 1224.438 -839.75
-024A: $PHONE_DIABLOS = create_phone_at 937.875 -230.0625 
-024A: $PHONE_HOODS = create_phone_at -443.5 -6.5625 
-024A: $PHONE_YARDIES = create_phone_at 120.0 -272.0 
-024A: $PHONE_RAY1 = create_phone_at 229.0625 -1537.563 
-024A: $PHONE_RAY2 = create_phone_at -53.5 -699.0 
-024A: $PHONE_RAY3 = create_phone_at 204.6875 -135.0625 
-024A: $PHONE_RAY4 = create_phone_at 60.1875 -964.75 
-
-02A7: $LUIGI_MISSION_MARKER = create_icon_marker_and_sphere 13 at 892.75 -425.75 13.875 
-0164: disable_marker $LUIGI_MISSION_MARKER 
-02A7: $JOEY_MISSION_MARKER = create_icon_marker_and_sphere 10 at 1191.688 -870.0 -100.0 
-0164: disable_marker $JOEY_MISSION_MARKER 
-02A7: $TONI_MISSION_MARKER = create_icon_marker_and_sphere 19 at 1219.563 -321.0 -100.0 
-0164: disable_marker $TONI_MISSION_MARKER 
-02A7: $SALVATORE_MISSION_MARKER = create_icon_marker_and_sphere 16 at 1455.688 -187.25 -100.0 
-0164: disable_marker $SALVATORE_MISSION_MARKER 
-02A7: $8BALL_CONTACT_POINT = create_icon_marker_and_sphere 7 at 1272.188 -92.875 -100.0 
-0164: disable_marker $8BALL_CONTACT_POINT 
-02A7: $DIABLO_PHONE_MARKER = create_icon_marker_and_sphere 8 at 938.375 -230.5 -100.0 
-0164: disable_marker $DIABLO_PHONE_MARKER 
-02A7: $ASUKA_MISSION_MARKER = create_icon_marker_and_sphere 1 at 523.5625 -639.375 16.5625 
-0164: disable_marker $ASUKA_MISSION_MARKER 
-02A7: $KENJI_MISSION_MARKER = create_icon_marker_and_sphere 11 at 459.0625 -1413.0 26.0625 
-0164: disable_marker $KENJI_MISSION_MARKER 
-02A7: $RAY_MISSION_MARKER = create_icon_marker_and_sphere 15 at 38.75 -725.375 -100.0 
-0164: disable_marker $RAY_MISSION_MARKER 
-02A7: $DONALD_MISSION_MARKER = create_icon_marker_and_sphere 6 at 86.0625 -1548.688 28.25 
-0164: disable_marker $DONALD_MISSION_MARKER 
-02A7: $YARDIE_PHONE_MARKER = create_icon_marker_and_sphere 12 at 120.6875 -272.0625 16.0625 
-0164: disable_marker $YARDIE_PHONE_MARKER 
-02A7: $COLOMBIAN_MANSION_MARKER = create_icon_marker_and_sphere 3 at -363.6875 246.0625 60.0 
-0164: disable_marker $COLOMBIAN_MANSION_MARKER 
-02A7: $HOODS_PHONE_MARKER = create_icon_marker_and_sphere 9 at -443.5 -6.0625 3.75 
-0164: disable_marker $HOODS_PHONE_MARKER 
-02A7: $PORTLAND_SAVE_MARKER = create_icon_marker_and_sphere 17 at 893.5 -306.0625 -100.0 
-0164: disable_marker $PORTLAND_SAVE_MARKER 
-02A7: $STAUNTON_SAVE_MARKER = create_icon_marker_and_sphere 17 at 103.0 -484.1875 -100.0 
-0164: disable_marker $STAUNTON_SAVE_MARKER 
-02A7: $SHORESIDE_SAVE_MARKER = create_icon_marker_and_sphere 17 at -665.0 -6.5 -100.0 
-0164: disable_marker $SHORESIDE_SAVE_MARKER 
-02A8: $SPRAY_TAXI = create_marker 18 at 925.0 -359.5 -100.0 
-0164: disable_marker $SPRAY_TAXI 
+:INIT_MISSION_LOCATIONS 
+//004F: create_thread @4x4_MISSION1_LOOP
 return
 
 :INIT_THREADS  
 // Debug threads
+0004: $MASTERDEBUG = 1
 00D7: create_thread_without_extra_params @STARTER
-// GTA 3 normal threads
-004F: create_thread @RC_LOOP
-004F: create_thread @4x4_MISSION1_LOOP
-004F: create_thread @4x4_MISSION2_LOOP
-004F: create_thread @4x4_MISSION3_LOOP
-004F: create_thread @4x4_MISSION4_LOOP
-004F: create_thread @PARAMEDIC_LOOP
-004F: create_thread @FIRE_LOOP
-004F: create_thread @VIGILANTE_LOOP
-004F: create_thread @TAXI_LOOP
-00D7: create_thread_without_extra_params @INSANE_STUNT
-00D7: create_thread_without_extra_params @USJ
-00D7: create_thread_without_extra_params @GENSTUFF
-00D7: create_thread_without_extra_params @KILL_FRENZY
-00D7: create_thread_without_extra_params @ALL_REWARDS
-00D7: create_thread_without_extra_params @CAMERA
-00D7: create_thread_without_extra_params @GATES
 return
 
 // This sub creates sound loops
