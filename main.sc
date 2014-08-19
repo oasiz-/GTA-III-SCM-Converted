@@ -450,34 +450,34 @@ end // main loop that constantly runs
 
 :handle_idle
 
-01EB: set_car_density_to 0.0
-0169: set_fade_color 0 0 0
-fade 0 for 1000 ms
-
-fade 1 for 1000 ms
-0249: release_model #PATRIOT
-03CB: load_scene 807.0 -937.0 36.5625
-01C3: remove_references_to_car $CAR_PATRIOT
-0247: request_model #PATRIOT
-038B: load_all_models_now 
-wait 100
-0395: clear_area 1 at 812.0 -945.5 range 35.75 300 
-00A5: create_car #PATRIOT at 812.0 -945.5 35.75 store_to $CAR_PATRIOT
-0229: set_car $CAR_PATRIOT color_to 33 51
-0169: set_fade_color 255 255 255
-03CB: load_scene 807.0 -937.0 36.5625
-    //0055: put_player $PLAYER_CHAR at 811.875 -939.9375 35.75
-0239: actor $PLAYER_ACTOR run_to 812.0 -945.5
-01B4: set_player $PLAYER_CHAR controllable 0
-01D5: actor $PLAYER_ACTOR go_to_and_drive_car $CAR_PATRIOT
-wait 1000
-00BA: print_big 'T4X4_1' time 5000 style 2  // 'PATRIOT PLAYGROUND'
-wait 5000
-020A: set_car $CAR_PATRIOT door_status_to CARLOCK_LOCKED
-0169: set_fade_color 255 255 255
-fade 0 for 1000 ms
-043C: set_game_sounds_fade 1
-01EB: set_car_density_to 1.0
+//01EB: set_car_density_to 0.0
+//0169: set_fade_color 0 0 0
+//fade 0 for 1000 ms
+//
+//fade 1 for 1000 ms
+//0249: release_model #PATRIOT
+//03CB: load_scene 807.0 -937.0 36.5625
+//01C3: remove_references_to_car $CAR_PATRIOT
+//0247: request_model #PATRIOT
+//038B: load_all_models_now 
+//wait 100
+//0395: clear_area 1 at 812.0 -945.5 range 35.75 300 
+//00A5: create_car #PATRIOT at 812.0 -945.5 35.75 store_to $CAR_PATRIOT
+//0229: set_car $CAR_PATRIOT color_to 33 51
+//0169: set_fade_color 255 255 255
+//03CB: load_scene 807.0 -937.0 36.5625
+//    0055: put_player $PLAYER_CHAR at 811.875 -939.9375 35.75
+//0239: actor $PLAYER_ACTOR run_to 812.0 -945.5
+//01B4: set_player $PLAYER_CHAR controllable 0
+//01D5: actor $PLAYER_ACTOR go_to_and_drive_car $CAR_PATRIOT
+//wait 1000
+//00BA: print_big 'T4X4_1' time 5000 style 2  // 'PATRIOT PLAYGROUND'
+//wait 5000
+//020A: set_car $CAR_PATRIOT door_status_to CARLOCK_LOCKED
+//0169: set_fade_color 255 255 255
+//fade 0 for 1000 ms
+//043C: set_game_sounds_fade 1
+//01EB: set_car_density_to 1.0
 
 return
 
