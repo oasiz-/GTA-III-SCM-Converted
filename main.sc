@@ -405,7 +405,9 @@ END
 
 
 //-------------MAIN---------------
-
+043C: set_game_sounds_fade 1
+fade 1 0                    
+043C: set_game_sounds_fade 0
 03A4: name_thread 'MAIN' 
 0053: create_player #NULL at 811.875 -939.9375 35.75 store_to $PLAYER_CHAR
 016E: override_next_restart at 811.875 -939.9375 35.75 angle 180.0
@@ -422,43 +424,24 @@ gosub @INIT_SOUND_LOOPS
 01B6: set_weather WEATHER_CLOUDY
 00C0: set_current_time 4 20  
 
-0169: set_fade_color 0 0 0 
-016A: fade 0 for 0 ms
-03CB: load_scene 807.0 -937.0 36.5625
 
-0247: request_model #PATRIOT
-038B: load_all_models_now 
-03AF: set_streaming 1 
-03F7: load_island_data 1
-043C: set_game_sounds_fade 0  
-wait 1000
-0395: clear_area 1 at 812.0 -945.5 range 35.75 300 
-00A5: create_car #PATRIOT at 812.0 -945.5 35.75 store_to $CAR_PATRIOT
-0229: set_car $CAR_PATRIOT color_to 33 51
-fade 1 for 1000 ms
-while fading
-wait 0 ms
-end
-0169: set_fade_color 255 255 255
 
-0239: actor $PLAYER_ACTOR run_to 812.0 -945.5
-01B4: set_player $PLAYER_CHAR controllable 0
-01D5: actor $PLAYER_ACTOR go_to_and_drive_car $CAR_PATRIOT
-wait 1000
-00BA: print_big 'T4X4_1' time 5000 style 2  // 'PATRIOT PLAYGROUND'
-wait 2000
-fade 0 for 1000 ms
-wait 1000
-043C: set_game_sounds_fade 1
+
+
+
+0169: set_fade_color 1 1 1
+
 0417: start_mission M00_PATRIOT
 
 
 while true
 wait 1000 ms
+while fading
+wait 0 ms
+end
 if 
     0038: $ONMISSION == 0
 then
-    gosub @handle_idle
     0417: start_mission M00_PATRIOT
 end
 
@@ -466,14 +449,11 @@ end // main loop that constantly runs
 
 
 :handle_idle
-0055: put_player $PLAYER_CHAR at 811.875 -939.9375 35.75
-016E: override_next_restart at 811.875 -939.9375 35.75 angle 180.0
+
 01EB: set_car_density_to 0.0
 0169: set_fade_color 0 0 0
 fade 0 for 1000 ms
-while fading
-wait 0 ms
-end
+
 fade 1 for 1000 ms
 0249: release_model #PATRIOT
 03CB: load_scene 807.0 -937.0 36.5625
@@ -498,7 +478,7 @@ wait 5000
 fade 0 for 1000 ms
 043C: set_game_sounds_fade 1
 01EB: set_car_density_to 1.0
-0369: put_player $PLAYER_CHAR in_car $CAR_PATRIOT
+
 return
 
 //Main threads
