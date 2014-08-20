@@ -442,6 +442,7 @@ end
 if 
     0038: $ONMISSION == 0
 then
+    wait 3000
     0417: start_mission M00_PATRIOT
 end
 

@@ -34,10 +34,10 @@ end_thread
 wait 2000 
 00A5: create_car #PATRIOT at 816.288 -1050.0724 14.5562 store_to $CAR_CHALLENGE // 158.3151 angle
 0229: set_car $CAR_CHALLENGE color_to 33 51
-fade 1 for 1000 ms
-while fading
-wait 0 ms
-end
+//fade 1 for 1000 ms
+//while fading
+//wait 0 ms
+//end
 0169: set_fade_color 1 1 1
 0239: actor $PLAYER_ACTOR run_to 812.0 -945.5
 01B4: set_player $PLAYER_CHAR controllable 0
@@ -376,7 +376,7 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 			wait 0 ms	
 		end
 		wait 2000
-		02A3: toggle_widescreen 0 
+		 
 		01B4: set_player $PLAYER_CHAR controllable 1 
 		if
 			8119:   not car $CAR_CHALLENGE wrecked 
@@ -388,12 +388,14 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 		while fading
 			wait 0 ms
 		end
+        02A3: toggle_widescreen 0
         02EB: restore_camera_jumpcut 
         		016A: fade 1 for 1500 ms
 		while fading
 			wait 0 ms
 		end
 		00BE: clear_prints
+
         0004: $PATRIOT_PLAYGROUND_HELP_FINISHED = 1
 	end
 
@@ -479,12 +481,13 @@ return
 0164: disable_marker $BLIP_10
 0164: disable_marker $BLIP_11
 0164: disable_marker $BLIP_12
- 
-
+0322: kill_player $PLAYER_CHAR
+wait 4000
 02EB: restore_camera_jumpcut 
 02A3: toggle_widescreen 0 
 01B4: set_player $PLAYER_CHAR controllable 1 
 014F: stop_timer $TIMER_4X4 
 0004: $ONMISSION = 0 
+03E2: actor $PLAYER_ACTOR exit_car
 00D8: mission_has_finished 
 0051: return 
