@@ -421,31 +421,37 @@ gosub @VARIABLE_INIT
 gosub @INIT_SOUND_LOOPS
 0111: set_wasted_busted_check_to 0
 
-01B6: set_weather WEATHER_CLOUDY
-00C0: set_current_time 4 20  
-
-
+01B6: set_weather WEATHER_CLOUDY 
+038B: load_all_models_now 
+03AF: set_streaming 1 
+03F7: load_island_data 1
+0417: start_mission M00_PATRIOT
 
 
 
 
 0169: set_fade_color 1 1 1
 
-0417: start_mission M00_PATRIOT
-
-
 while true
-wait 1000 ms
-while fading
-wait 0 ms
-end
-if 
-    0038: $ONMISSION == 0
-then
-    wait 3000
-    0417: start_mission M00_PATRIOT
-end
-
+    wait 1000 ms
+        while fading
+            wait 0 ms
+        end
+    if 
+        0038: $ONMISSION == 0
+    then
+        wait 1000 ms
+        if 
+            0038: $ONMISSION == 0
+        then
+            while fading
+                wait 0 ms
+            end
+            wait 1000 ms
+            01B4: set_player $PLAYER_CHAR controllable 0
+            0417: start_mission M00_PATRIOT
+        end
+    end
 end // main loop that constantly runs
 
 

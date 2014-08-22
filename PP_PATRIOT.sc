@@ -10,7 +10,7 @@
 
 :M00_PATRIOT
 gosub @MISSION_START_CLINIC_COURSE
-GOSUB @MISSION_CLEANUP_4X4ONE
+GOSUB @MISSION_CLEANUP_CLINIC_COURSE
 end_thread
 
 // ****************************************Mission Start************************************
@@ -18,10 +18,11 @@ end_thread
 :MISSION_START_CLINIC_COURSE
 0004: $ONMISSION = 1 
 //initial stuff for the mission
- 
+01B4: set_player $PLAYER_CHAR controllable 0 
 0055: put_player $PLAYER_CHAR at 825.9011 -1054.3267 14.4000
 0171: set_player $PLAYER_CHAR z_angle_to 56.0434
-016E: override_next_restart at 825.9011 -1054.3267 14.4000 angle 56.0434
+//016E: override_next_restart at 825.9011 -1054.3267 14.4000 angle 56.0434
+01B6: set_weather WEATHER_SUNNY
 00C0: set_current_time 4 20
 0169: set_fade_color 1 1 1 
 //016A: fade 0 for 0 ms
@@ -31,7 +32,8 @@ end_thread
 03AF: set_streaming 1 
 03F7: load_island_data 1
 043C: set_game_sounds_fade 0  
-wait 2000 
+wait 2000
+00BA: print_big 'T4X4_1' time 10000 style 2  // 'PATRIOT PLAYGROUND' 
 00A5: create_car #PATRIOT at 816.288 -1050.0724 14.5562 store_to $CAR_CHALLENGE // 158.3151 angle
 0229: set_car $CAR_CHALLENGE color_to 33 51
 //fade 1 for 1000 ms
@@ -40,7 +42,6 @@ wait 2000
 //end
 0169: set_fade_color 1 1 1
 0239: actor $PLAYER_ACTOR run_to 812.0 -945.5
-01B4: set_player $PLAYER_CHAR controllable 0
 01D5: actor $PLAYER_ACTOR go_to_and_drive_car $CAR_CHALLENGE
 wait 3000
 fade 0 for 1000 ms
@@ -99,7 +100,6 @@ wait 1000
 //1164.6238 -518.1641 21.0994 248.6794    // Stallion corner
 //1183.4482 -646.0514 26.0638 1.2797      // Grass bump on the back
 //1179.0785 -567.0985 27.3045 1.8328      // That damn ledge of hope
-
 //1140.2371 -528.9567 21.1721 179.4683    // Clinic stairs
 //1171.5259 -715.6229 15.2185 290.6114    // Grass in the back
 //1254.5132 -631.0382 19.9624 310.5861    // Evil ramp
@@ -206,7 +206,7 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 			0164: disable_marker $BLIP_1 
 			018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_1 $Y_1 $Z_1 
 			0004: $FLAG_BLIP_1 = 1 
-			gosub @MISSION_4X4ONE_CHECKPOINT_PICKED_UP
+			gosub @MISSION_CLINIC_COURSE_CHECKPOINT_PICKED_UP
 		end
 	end
 	
@@ -220,7 +220,7 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 			0164: disable_marker $BLIP_2 
 			018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_2 $Y_2 $Z_2 
 			0004: $FLAG_BLIP_2 = 1 
-			gosub @MISSION_4X4ONE_CHECKPOINT_PICKED_UP
+			gosub @MISSION_CLINIC_COURSE_CHECKPOINT_PICKED_UP
 		end
 	end
 	
@@ -234,7 +234,7 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 			0164: disable_marker $BLIP_3 
 			018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_3 $Y_3 $Z_3 
 			0004: $FLAG_BLIP_3 = 1 
-			gosub @MISSION_4X4ONE_CHECKPOINT_PICKED_UP
+			gosub @MISSION_CLINIC_COURSE_CHECKPOINT_PICKED_UP
 		end
 		end
 		
@@ -248,7 +248,7 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 			0164: disable_marker $BLIP_4 
 			018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_4 $Y_4 $Z_4 
 			0004: $FLAG_BLIP_4 = 1 
-			gosub @MISSION_4X4ONE_CHECKPOINT_PICKED_UP
+			gosub @MISSION_CLINIC_COURSE_CHECKPOINT_PICKED_UP
 		end
 		end
 		if
@@ -261,7 +261,7 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 			0164: disable_marker $BLIP_5 
 			018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_5 $Y_5 $Z_5 
 			0004: $FLAG_BLIP_5 = 1 
-			gosub @MISSION_4X4ONE_CHECKPOINT_PICKED_UP
+			gosub @MISSION_CLINIC_COURSE_CHECKPOINT_PICKED_UP
 		end
 		end
 		if
@@ -274,7 +274,7 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 			0164: disable_marker $BLIP_6 
 			018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_6 $Y_6 $Z_6 
 			0004: $FLAG_BLIP_6 = 1 
-			gosub @MISSION_4X4ONE_CHECKPOINT_PICKED_UP
+			gosub @MISSION_CLINIC_COURSE_CHECKPOINT_PICKED_UP
 		end
 		end
 		if
@@ -287,7 +287,7 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 			0164: disable_marker $BLIP_7 
 			018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_7 $Y_7 $Z_7 
 			0004: $FLAG_BLIP_7 = 1 
-			gosub @MISSION_4X4ONE_CHECKPOINT_PICKED_UP
+			gosub @MISSION_CLINIC_COURSE_CHECKPOINT_PICKED_UP
 		end
 		end
 		if
@@ -300,7 +300,7 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 			0164: disable_marker $BLIP_8 
 			018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_8 $Y_8 $Z_8 
 			0004: $FLAG_BLIP_8 = 1 
-			gosub @MISSION_4X4ONE_CHECKPOINT_PICKED_UP
+			gosub @MISSION_CLINIC_COURSE_CHECKPOINT_PICKED_UP
 		end
 		end
 		if
@@ -313,7 +313,7 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 			0164: disable_marker $BLIP_9 
 			018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_9 $Y_9 $Z_9
 			0004: $FLAG_BLIP_9 = 1 
-			gosub @MISSION_4X4ONE_CHECKPOINT_PICKED_UP
+			gosub @MISSION_CLINIC_COURSE_CHECKPOINT_PICKED_UP
 		end
 		end
 		if
@@ -326,7 +326,7 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 			0164: disable_marker $BLIP_10
 			018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_10 $Y_10 $Z_10 
 			0004: $FLAG_BLIP_10 = 1 
-			gosub @MISSION_4X4ONE_CHECKPOINT_PICKED_UP
+			gosub @MISSION_CLINIC_COURSE_CHECKPOINT_PICKED_UP
 		end
 		end
 		if
@@ -339,7 +339,7 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 			0164: disable_marker $BLIP_11 
 			018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_11 $Y_11 $Z_11 
 			0004: $FLAG_BLIP_11 = 1 
-			gosub @MISSION_4X4ONE_CHECKPOINT_PICKED_UP
+			gosub @MISSION_CLINIC_COURSE_CHECKPOINT_PICKED_UP
 		end
 		end
 		if
@@ -352,7 +352,7 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 			0164: disable_marker $BLIP_12 
 			018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_12 $Y_12 $Z_12 
 			0004: $FLAG_BLIP_12 = 1 
-			gosub @MISSION_4X4ONE_CHECKPOINT_PICKED_UP
+			gosub @MISSION_CLINIC_COURSE_CHECKPOINT_PICKED_UP
 		end
 	end
 
@@ -367,17 +367,16 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 	if
 		0038:   $PATRIOT_PLAYGROUND_HELP_FINISHED == 0 
 	then
+		01B4: set_player $PLAYER_CHAR controllable 0
 		015F: set_camera_position 1120.4916 -512.0543 30.968 0.0 rotation 0.0 0.0 
 		03CB: load_scene 1458.0 -564.0 28.0 
 		0160: point_camera 1147.713 -545.3979 21.6366 switchstyle JUMP_CUT
-		00BA: print_big 'T4X4_1' time 5000 style 2  // 'PATRIOT PLAYGROUND'
 		016A: fade 1 for 1500 ms 
 		while fading
 			wait 0 ms	
 		end
-		wait 2000
-		 
-		01B4: set_player $PLAYER_CHAR controllable 1 
+		wait 2000		 
+ 
 		if
 			8119:   not car $CAR_CHALLENGE wrecked 
 		then
@@ -389,6 +388,7 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 			wait 0 ms
 		end
         02A3: toggle_widescreen 0
+		01B4: set_player $PLAYER_CHAR controllable 1
         02EB: restore_camera_jumpcut 
         		016A: fade 1 for 1500 ms
 		while fading
@@ -411,14 +411,14 @@ while 001A:   12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT 
 			001A:   1 > $TIMER_4X4
 		then
 			00BC: print_now 'TAXI2' time 3000 flag 1  // ~r~You're out of time!
-			goto @MISSION_4X4ONE_FAILED
+			goto @MISSION_CLINIC_COURSE_FAILED
 		end
 	end
 	if
 		80DE:   not is_player_in_model $PLAYER_CHAR model #PATRIOT
 	then
 		00BC: print_now 'T4X4_F' time 3000 flag 1  // ~r~You bailed! Too tough for you?!
-		goto @MISSION_4X4ONE_FAILED
+		goto @MISSION_CLINIC_COURSE_FAILED
 	end
 end
 
@@ -428,9 +428,9 @@ end
 
 
 if
-	0038:   $COUNTER_4X4_PICKUPS == 3
+	0038:   $COUNTER_4X4_PICKUPS == 12   // 12 !!!!
 then
-	goto @MISSION_4X4ONE_PASSED
+	goto @MISSION_CLINIC_COURSE_PASSED
 end
 
     // ----------------------------------------------------------------------------------------------
@@ -438,40 +438,41 @@ end
     // ----------------------------------------------------------------------------------------------
 
 
-:MISSION_4X4ONE_CHECKPOINT_PICKED_UP
+:MISSION_CLINIC_COURSE_CHECKPOINT_PICKED_UP
 0008: $COUNTER_4X4_PICKUPS += 1 
 0008: $TIMER_4X4 += 8000 
-01E5: text_1number_highpriority 'T4X4_1B' $COUNTER_4X4_PICKUPS flag 3000 time 1  // ~1~ of many!
+01E5: text_1number_highpriority 'T4X4_1B' $COUNTER_4X4_PICKUPS flag 30000 time 1  // ~1~ of many!
 return
+
 
     // ----------------------------------------------------------------------------------------------
     // -------------------     MISSION FAILED ROUTINRE             ----------------------------------
     // ----------------------------------------------------------------------------------------------
 
-:MISSION_4X4ONE_FAILED
+:MISSION_CLINIC_COURSE_FAILED
 00BA: print_big 'M_FAIL' time 2000 style 1  // MISSION FAILED!
+0255: set_critical_mission_restart_at 825.9011 -1054.3267 14.4000 angle 56.0434
+0322: kill_player $PLAYER_CHAR
+wait 2000 ms
+goto @MISSION_CLEANUP_CLINIC_COURSE
 return
 
     // ----------------------------------------------------------------------------------------------
     // -------------------     MISSION COMPLETE ROUTINE            ----------------------------------
     // ----------------------------------------------------------------------------------------------
 
-:MISSION_4X4ONE_PASSED
-
-01E3: text_1number_styled 'M_PASS' number 20000 time 5000 style 1  // MISSION PASSED! $~1~
-0394: play_music 1 
+:MISSION_CLINIC_COURSE_PASSED
+0004: $COURSE_CLINIC_COURSE = $TIMER_4X4
+014F: stop_timer $TIMER_4X4
+01B4: set_player $PLAYER_CHAR controllable 0
+016A: fade 0 for 1500 ms
+while fading
+   wait 0 ms
+end
 0110: clear_player $PLAYER_CHAR wanted_level 
-
-return
-
-
-    // ----------------------------------------------------------------------------------------------
-    // -------------------     MISSION CLEANUP ROUTINE             ----------------------------------
-    // ----------------------------------------------------------------------------------------------
-
-:MISSION_CLEANUP_4X4ONE
 0164: disable_marker $BLIP_1 
 0164: disable_marker $BLIP_2 
+0164: disable_marker $BLIP_3
 0164: disable_marker $BLIP_4
 0164: disable_marker $BLIP_5
 0164: disable_marker $BLIP_6
@@ -481,13 +482,63 @@ return
 0164: disable_marker $BLIP_10
 0164: disable_marker $BLIP_11
 0164: disable_marker $BLIP_12
-0322: kill_player $PLAYER_CHAR
+02A3: toggle_widescreen 1
+015F: set_camera_position 1120.4916 -512.0543 30.968 0.0 rotation 0.0 0.0 
+		03CB: load_scene 1458.0 -564.0 28.0 
+		0160: point_camera 1147.713 -545.3979 21.6366 switchstyle JUMP_CUT
+016A: fade 1 for 1000 ms
+while fading
+   wait 0 ms
+end
+01E3: text_1number_styled 'M_PASS' number 20000 time 5000 style 1  // MISSION PASSED! $~1~
+0394: play_music 1 		
 wait 4000
+016A: fade 0 for 1000 ms
+while fading
+   wait 0 ms
+end
+012A: put_player $PLAYER_CHAR at 825.9011 -1054.3267 14.4000 and_remove_from_car
+0171: set_player $PLAYER_CHAR z_angle_to 56.0434
 02EB: restore_camera_jumpcut 
-02A3: toggle_widescreen 0 
-01B4: set_player $PLAYER_CHAR controllable 1 
+02A3: toggle_widescreen 0
+//mission_cleanup 
+00D8: mission_has_finished 
+wait 1
+016A: fade 1 for 1000 ms
+while fading
+   wait 0 ms
+end 
+wait 1000 ms
+0004: $ONMISSION = 0 
+0051: return
+return
+
+    // ----------------------------------------------------------------------------------------------
+    // -------------------     MISSION BAD ENDING ROUTINE          ----------------------------------
+    // ----------------------------------------------------------------------------------------------
+
+:MISSION_CLEANUP_CLINIC_COURSE
+01B4: set_player $PLAYER_CHAR controllable 0
+0164: disable_marker $BLIP_1 
+0164: disable_marker $BLIP_2 
+0164: disable_marker $BLIP_3
+0164: disable_marker $BLIP_4
+0164: disable_marker $BLIP_5
+0164: disable_marker $BLIP_6
+0164: disable_marker $BLIP_7
+0164: disable_marker $BLIP_8
+0164: disable_marker $BLIP_9
+0164: disable_marker $BLIP_10
+0164: disable_marker $BLIP_11
+0164: disable_marker $BLIP_12
+02EB: restore_camera_jumpcut 
+02A3: toggle_widescreen 0  
 014F: stop_timer $TIMER_4X4 
 0004: $ONMISSION = 0 
-03E2: actor $PLAYER_ACTOR exit_car
-00D8: mission_has_finished 
+//03E2: actor $PLAYER_ACTOR exit_car
+mission_cleanup 
+00D8: mission_has_finished
+while fading
+   wait 1000 ms
+end 
 0051: return 

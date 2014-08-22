@@ -647,7 +647,13 @@ $MARIA_EXISTS = 0
 $DOOR_CRASH_FLAG = 0
 $DOOR_POSITION_A1 = 0.0
 $BARRIERS_BEEN_ADDED = 0
-$TOTAL_TIMES = 0 
+$TOTAL_TIMES = 0
+
+// POINTS FOR 4x4 !!
+
+$COURSE_CLINIC_COURSE = 0
+$COURSE_MIGTY_MANANA = 0
+$COURSE_THE_CHASE = 0 
 
 // No idea what 0181: and 0182: do but they're in the original code.
 0181: on_mission_for 12 flag = $ON_MISSION_FOR_8BALL 
