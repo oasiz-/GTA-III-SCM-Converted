@@ -694,7 +694,7 @@ return
 :INIT_THREADS  
 // Debug threads
 0004: $MASTERDEBUG = 1
-00D7: create_thread_without_extra_params @STARTER
+//00D7: create_thread_without_extra_params @STARTER
 return
 
 // This sub creates sound loops
