@@ -91,7 +91,6 @@ wait 1000
 0004: $FLAG_INTRO_JUMP = 0
 0004: $PATRIOT_PLAYGROUND_HELP_FINISHED = 0 
 0004: $RECORD_TEMP = 0 
-0004: $blipcount = 0 
 
 
     // ----------------------------------------------------------------------------------------------
@@ -169,6 +168,14 @@ end
 // - - - - MAIN LOOP - - - -
 while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF PICKUPS !!!
  wait 0 ms
+ if and
+     0038:   $blipcount == 1 
+     0038:   $FLAG_TIMER == 0 
+ then
+     014E: start_timer_at $TIMER_4X4 
+     0004: $FLAG_TIMER = 1 
+ end
+
  if
      0038: $blipcount == 0
  then
@@ -177,12 +184,10 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
      if
          00F7:   player $PLAYER_CHAR sphere 0 near_point_in_car $X_1 $Y_1 $Z_1 radius 7.5 7.5 7.5
      then
-         014E: start_timer_at $TIMER_4X4 
-         0004: $FLAG_TIMER = 1 
          0164: disable_marker $FIRST_BLIP
          0164: disable_marker $SECOND_BLIP
          018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_1 $Y_1 $Z_1
-         0004: $blipcount = 1
+         0008: $blipcount += 1
          gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
          018A: $FIRST_BLIP = create_checkpoint_at $X_2 $Y_2 $Z_2
          0167: $SECOND_BLIP = create_marker_at $X_3 $Y_3 $Z_3 color 5 flag 2
@@ -191,6 +196,23 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
 
  if
      0038: $blipcount == 1
+ then
+     024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 100 100 200 at_point $X_1 $Y_1 $Z_1
+     024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 50 50 50 at_point $X_2 $Y_2 $Z_2
+     if
+         00F7:   player $PLAYER_CHAR sphere 0 near_point_in_car $X_1 $Y_1 $Z_1 radius 7.5 7.5 7.5
+     then
+         0164: disable_marker $FIRST_BLIP
+         0164: disable_marker $SECOND_BLIP
+         018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_1 $Y_1 $Z_1
+         0008: $blipcount += 1
+         gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
+         018A: $FIRST_BLIP = create_checkpoint_at $X_2 $Y_2 $Z_2
+         0167: $SECOND_BLIP = create_marker_at $X_3 $Y_3 $Z_3 color 5 flag 2
+     end
+ end
+ if
+     0038: $blipcount == 2
  then
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 100 100 200 at_point $X_2 $Y_2 $Z_2
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 50 50 50 at_point $X_3 $Y_3 $Z_3
@@ -207,7 +229,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
      end
  end
  if
-     0038: $blipcount == 2
+     0038: $blipcount == 3
  then
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 100 100 200 at_point $X_3 $Y_3 $Z_3
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 50 50 50 at_point $X_4 $Y_4 $Z_4
@@ -224,7 +246,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
      end
  end
  if
-     0038: $blipcount == 3
+     0038: $blipcount == 4
  then
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 100 100 200 at_point $X_4 $Y_4 $Z_4
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 50 50 50 at_point $X_5 $Y_5 $Z_5
@@ -241,7 +263,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
      end
  end
  if
-     0038: $blipcount == 4
+     0038: $blipcount == 5
  then
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 100 100 200 at_point $X_5 $Y_5 $Z_5
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 50 50 50 at_point $X_6 $Y_6 $Z_6
@@ -258,7 +280,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
      end
  end
  if
-     0038: $blipcount == 5
+     0038: $blipcount == 6
  then
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 100 100 200 at_point $X_6 $Y_6 $Z_6
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 50 50 50 at_point $X_7 $Y_7 $Z_7
@@ -275,7 +297,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
      end
  end
  if
-     0038: $blipcount == 6
+     0038: $blipcount == 7
  then
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 100 100 200 at_point $X_7 $Y_7 $Z_7
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 50 50 50 at_point $X_8 $Y_8 $Z_8
@@ -292,7 +314,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
      end
  end
  if
-     0038: $blipcount == 7
+     0038: $blipcount == 8
  then
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 100 100 200 at_point $X_8 $Y_8 $Z_8
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 50 50 50 at_point $X_9 $Y_9 $Z_9
@@ -309,7 +331,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
      end
  end
  if
-     0038: $blipcount == 8
+     0038: $blipcount == 9
  then
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 100 100 200 at_point $X_9 $Y_9 $Z_9
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 50 50 50 at_point $X_10 $Y_10 $Z_10
@@ -326,7 +348,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
      end
  end
  if
-     0038: $blipcount == 9
+     0038: $blipcount == 10
  then
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 100 100 200 at_point $X_10 $Y_10 $Z_10
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 50 50 50 at_point $X_11 $Y_11 $Z_11
@@ -340,23 +362,6 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
          gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
          018A: $FIRST_BLIP = create_checkpoint_at $X_11 $Y_11 $Z_11
          0167: $SECOND_BLIP = create_marker_at $X_12 $Y_12 $Z_12 color 5 flag 2
-     end
- end
- if
-     0038: $blipcount == 10
- then
-     024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 100 100 200 at_point $X_11 $Y_11 $Z_11
-     024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 50 50 50 at_point $X_12 $Y_12 $Z_12
-     if
-         00F7:   player $PLAYER_CHAR sphere 0 near_point_in_car $X_11 $Y_11 $Z_11 radius 7.5 7.5 7.5
-     then
-         0164: disable_marker $FIRST_BLIP
-         0164: disable_marker $SECOND_BLIP
-         018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_11 $Y_11 $Z_11
-         0008: $blipcount += 1
-         gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
-         018A: $FIRST_BLIP = create_checkpoint_at $X_12 $Y_12 $Z_12
-         0167: $SECOND_BLIP = create_marker_at $X_13 $Y_13 $Z_13 color 5 flag 2
      end
  end
  if
@@ -456,7 +461,7 @@ end
 
 
 if
- 0038:   $COUNTER_4X4_PICKUPS == 13   // CP amount 
+ 0038:   $COUNTER_4X4_PICKUPS == 12   // CP amount 
 then
  goto @MISSION_Clinic_course_PASSED
 end

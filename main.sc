@@ -187,7 +187,7 @@ DEFINE OBJECT SECURITY_HUT             // Object number -184
 DEFINE OBJECT COLUMANSION_WALL         // Object number -185
 
 DEFINE MISSIONS 1
-DEFINE MISSION 0 AT @M00_PATRIOT    	// Patriot mission      
+DEFINE MISSION 0 AT @MIS_clinic    	// Patriot mission      
 CONST
 // <constant name> = <constant value>
 
@@ -425,7 +425,7 @@ gosub @INIT_SOUND_LOOPS
 038B: load_all_models_now 
 03AF: set_streaming 1 
 03F7: load_island_data 1
-0417: start_mission M00_PATRIOT
+0417: start_mission MIS_clinic
 
 
 
@@ -449,7 +449,7 @@ while true
             end
             wait 1000 ms
             01B4: set_player $PLAYER_CHAR controllable 0
-            0417: start_mission M00_PATRIOT
+            0417: start_mission MIS_clinic
         end
     end
 end // main loop that constantly runs
@@ -504,8 +504,6 @@ return
 //{$INCLUDE rewards.sc}  	//ALL_REWARDS
 //{$INCLUDE save.sc}     	//PORTLAND_SAVE - STAUNTON_SAVE - SSV_SAVE - PORTLAND_RESTART - STAUNTON_RESTART - SSV_RESTART
 //{$INCLUDE triggers.sc} 	//All mission triggers
-//{$INCLUDE usj.sc}      	//USJ
-
 
 
 
