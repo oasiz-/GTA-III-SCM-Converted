@@ -2,10 +2,10 @@
     // -------------------           MISSION GENERATE OUTOUT     ------------------------------------
     // ----------------------------------------------------------------------------------------------
 
-// Clinic_course (Internally called clinic) has the following parameters:
+// The_chase (Internally called chase) has the following parameters:
 // Starting coordinate: 994.1072 -80.4221 4.2526  Angle: 97.7364
 // We are using a car called BANSHEE with carcol 33 51
-// Weather is WEATHER_SUNNY
+// Weather is WEATHER_RAINY
 // Camera is located at: 917.9661 -79.6807 7.1198
 //
 // Coordinates for the mission are:
@@ -27,8 +27,8 @@
 // Mission start stuff
 
 :MIS_clinic
-gosub @MISSION_START_Clinic_course
-GOSUB @MISSION_CLEANUP_Clinic_course
+gosub @MISSION_START_The_chase
+GOSUB @MISSION_CLEANUP_The_chase
 end_thread
 
     // ----------------------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ end_thread
     // ----------------------------------------------------------------------------------------------
     // ----------------------------------------------------------------------------------------------
 
-:MISSION_START_Clinic_course
+:MISSION_START_The_chase
 0004: $ONMISSION = 1 
     // ----------------------------------------------------------------------------------------------
     // -------------------R             INITIAL MISSION          ------------------------------------
@@ -51,12 +51,13 @@ end_thread
 0169: set_fade_color 1 1 1 
 03CB: load_scene 807.0 -937.0 36.5625
 0247: request_model #BANSHEE
+01EB: set_traffic_density_multiplier_to 2.0
 038B: load_all_models_now 
 03AF: set_streaming 1 
 03F7: load_island_data 1
 043C: set_game_sounds_fade 0  
 wait 2000
-00BA: print_big 'T4X4_1' time 10000 style 2  // Change this GXT entry to Clinic_course
+00BA: print_big 'T4X4_1' time 10000 style 2  // Change this GXT entry to The_chase
 00A5: create_car #BANSHEE at 816.288 -1050.0724 14.5562 store_to $CAR_CHALLENGE // 158.3151 angle
 0229: set_car $CAR_CHALLENGE color_to 33 51
 0169: set_fade_color 1 1 1
@@ -77,7 +78,7 @@ wait 1000
 
 
 0317: increment_mission_attempts 
-03A4: name_thread 'clinic'
+03A4: name_thread 'chase'
 
     // ----------------------------------------------------------------------------------------------
     // -------------------R               SET VARIABLES          ------------------------------------
@@ -183,7 +184,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
          0164: disable_marker $SECOND_BLIP
          018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_1 $Y_1 $Z_1
          0004: $blipcount = 1
-         gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
+         gosub @MISSION_The_chase_CHECKPOINT_PICKED_UP
          018A: $FIRST_BLIP = create_checkpoint_at $X_2 $Y_2 $Z_2
          0167: $SECOND_BLIP = create_marker_at $X_3 $Y_3 $Z_3 color 5 flag 2
      end
@@ -201,7 +202,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
          0164: disable_marker $SECOND_BLIP
          018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_2 $Y_2 $Z_2
          0008: $blipcount += 1
-         gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
+         gosub @MISSION_The_chase_CHECKPOINT_PICKED_UP
          018A: $FIRST_BLIP = create_checkpoint_at $X_3 $Y_3 $Z_3
          0167: $SECOND_BLIP = create_marker_at $X_4 $Y_4 $Z_4 color 5 flag 2
      end
@@ -218,7 +219,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
          0164: disable_marker $SECOND_BLIP
          018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_3 $Y_3 $Z_3
          0008: $blipcount += 1
-         gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
+         gosub @MISSION_The_chase_CHECKPOINT_PICKED_UP
          018A: $FIRST_BLIP = create_checkpoint_at $X_4 $Y_4 $Z_4
          0167: $SECOND_BLIP = create_marker_at $X_5 $Y_5 $Z_5 color 5 flag 2
      end
@@ -235,7 +236,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
          0164: disable_marker $SECOND_BLIP
          018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_4 $Y_4 $Z_4
          0008: $blipcount += 1
-         gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
+         gosub @MISSION_The_chase_CHECKPOINT_PICKED_UP
          018A: $FIRST_BLIP = create_checkpoint_at $X_5 $Y_5 $Z_5
          0167: $SECOND_BLIP = create_marker_at $X_6 $Y_6 $Z_6 color 5 flag 2
      end
@@ -252,7 +253,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
          0164: disable_marker $SECOND_BLIP
          018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_5 $Y_5 $Z_5
          0008: $blipcount += 1
-         gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
+         gosub @MISSION_The_chase_CHECKPOINT_PICKED_UP
          018A: $FIRST_BLIP = create_checkpoint_at $X_6 $Y_6 $Z_6
          0167: $SECOND_BLIP = create_marker_at $X_7 $Y_7 $Z_7 color 5 flag 2
      end
@@ -269,7 +270,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
          0164: disable_marker $SECOND_BLIP
          018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_6 $Y_6 $Z_6
          0008: $blipcount += 1
-         gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
+         gosub @MISSION_The_chase_CHECKPOINT_PICKED_UP
          018A: $FIRST_BLIP = create_checkpoint_at $X_7 $Y_7 $Z_7
          0167: $SECOND_BLIP = create_marker_at $X_8 $Y_8 $Z_8 color 5 flag 2
      end
@@ -286,7 +287,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
          0164: disable_marker $SECOND_BLIP
          018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_7 $Y_7 $Z_7
          0008: $blipcount += 1
-         gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
+         gosub @MISSION_The_chase_CHECKPOINT_PICKED_UP
          018A: $FIRST_BLIP = create_checkpoint_at $X_8 $Y_8 $Z_8
          0167: $SECOND_BLIP = create_marker_at $X_9 $Y_9 $Z_9 color 5 flag 2
      end
@@ -303,7 +304,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
          0164: disable_marker $SECOND_BLIP
          018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_8 $Y_8 $Z_8
          0008: $blipcount += 1
-         gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
+         gosub @MISSION_The_chase_CHECKPOINT_PICKED_UP
          018A: $FIRST_BLIP = create_checkpoint_at $X_9 $Y_9 $Z_9
          0167: $SECOND_BLIP = create_marker_at $X_10 $Y_10 $Z_10 color 5 flag 2
      end
@@ -320,7 +321,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
          0164: disable_marker $SECOND_BLIP
          018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_9 $Y_9 $Z_9
          0008: $blipcount += 1
-         gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
+         gosub @MISSION_The_chase_CHECKPOINT_PICKED_UP
          018A: $FIRST_BLIP = create_checkpoint_at $X_10 $Y_10 $Z_10
          0167: $SECOND_BLIP = create_marker_at $X_11 $Y_11 $Z_11 color 5 flag 2
      end
@@ -337,7 +338,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
          0164: disable_marker $SECOND_BLIP
          018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_10 $Y_10 $Z_10
          0008: $blipcount += 1
-         gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
+         gosub @MISSION_The_chase_CHECKPOINT_PICKED_UP
          018A: $FIRST_BLIP = create_checkpoint_at $X_11 $Y_11 $Z_11
          0167: $SECOND_BLIP = create_marker_at $X_12 $Y_12 $Z_12 color 5 flag 2
      end
@@ -354,29 +355,13 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
          0164: disable_marker $SECOND_BLIP
          018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_11 $Y_11 $Z_11
          0008: $blipcount += 1
-         gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
+         gosub @MISSION_The_chase_CHECKPOINT_PICKED_UP
          018A: $FIRST_BLIP = create_checkpoint_at $X_12 $Y_12 $Z_12
          0167: $SECOND_BLIP = create_marker_at $X_13 $Y_13 $Z_13 color 5 flag 2
      end
  end
  if
      0038: $blipcount == 11
- then
-     024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 100 100 200 at_point $X_11 $Y_11 $Z_11
-     024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 50 50 50 at_point $X_12 $Y_12 $Z_12
-     if
-         00F7:   player $PLAYER_CHAR sphere 0 near_point_in_car $X_11 $Y_11 $Z_11 radius 7.5 7.5 7.5
-     then
-         0164: disable_marker $FIRST_BLIP
-         0164: disable_marker $SECOND_BLIP
-         018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_11 $Y_11 $Z_11
-         0008: $blipcount += 1
-         gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
-         018A: $FIRST_BLIP = create_checkpoint_at $X_12 $Y_12 $Z_12
-     end
- end
- if
-     0038: $blipcount == 12
  then
      024F: create_corona 3.0 CORONATYPE_HEX FLARETYPE_NONE with_color 0 200 0 at_point $X_12 $Y_12 $Z_12
      if
@@ -386,7 +371,7 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
          0164: disable_marker $SECOND_BLIP
          018C: play_sound SOUND_PART_MISSION_COMPLETE at $X_12 $Y_12 $Z_12
          0008: $blipcount += 1
-         gosub @MISSION_Clinic_course_CHECKPOINT_PICKED_UP
+         gosub @MISSION_The_chase_CHECKPOINT_PICKED_UP
      end
  end
 
@@ -439,14 +424,14 @@ while 001A: 12 > $COUNTER_4X4_PICKUPS                      /////////// AMOUNT OF
          001A:   1 > $TIMER_4X4
      then
          00BC: print_now 'TAXI2' time 3000 flag 1  // ~r~You're out of time!
-         goto @MISSION_Clinic_course_FAILED
+         goto @MISSION_The_chase_FAILED
      end
  end
  if
      80DE:   not is_player_in_model $PLAYER_CHAR model #BANSHEE
  then
      00BC: print_now 'T4X4_F' time 3000 flag 1  // ~r~You bailed! Too tough for you?!
-     goto @MISSION_Clinic_course_FAILED
+     goto @MISSION_The_chase_FAILED
  end
 end
 
@@ -456,9 +441,9 @@ end
 
 
 if
- 0038:   $COUNTER_4X4_PICKUPS == 13   // CP amount 
+ 0038:   $COUNTER_4X4_PICKUPS == 12   // CP amount 
 then
- goto @MISSION_Clinic_course_PASSED
+ goto @MISSION_The_chase_PASSED
 end
 
     // ----------------------------------------------------------------------------------------------
@@ -466,9 +451,9 @@ end
     // ----------------------------------------------------------------------------------------------
 
 
-:MISSION_Clinic_course_CHECKPOINT_PICKED_UP
+:MISSION_The_chase_CHECKPOINT_PICKED_UP
 0008: $COUNTER_4X4_PICKUPS += 1 
-0008: $TIMER_4X4 += 20000
+0008: $TIMER_4X4 += 10000
 01E5: text_1number_highpriority 'T4X4_1B' $COUNTER_4X4_PICKUPS flag 30000 time 1  // ~1~ of many!
 return
 
@@ -477,20 +462,20 @@ return
     // -------------------R       MISSION FAIL ROUTINE             ----------------------------------
     // ----------------------------------------------------------------------------------------------
 
-:MISSION_Clinic_course_FAILED
+:MISSION_The_chase_FAILED
 00BA: print_big 'M_FAIL' time 2000 style 1  // MISSION FAILED!
 0255: set_critical_mission_restart_at 825.9011 -1054.3267 14.4000 angle 56.0434
 0322: kill_player $PLAYER_CHAR
 wait 2000 ms
-goto @MISSION_CLEANUP_Clinic_course
+goto @MISSION_CLEANUP_The_chase
 return
 
     // ----------------------------------------------------------------------------------------------
     // -------------------R    MISSION COMPLETE ROUTINE            ----------------------------------
     // ----------------------------------------------------------------------------------------------
 
-:MISSION_Clinic_course_PASSED
-0004: $COURSE_Clinic_course = $TIMER_4X4
+:MISSION_The_chase_PASSED
+0004: $COURSE_The_chase = $TIMER_4X4
 014F: stop_timer $TIMER_4X4
 01B4: set_player $PLAYER_CHAR controllable 0
 016A: fade 0 for 1500 ms
@@ -534,7 +519,7 @@ return
     // -------------------R    MISSION BAD ENDING ROUTINE          ----------------------------------
     // ----------------------------------------------------------------------------------------------
 
-:MISSION_CLEANUP_Clinic_course
+:MISSION_CLEANUP_The_chase
 01B4: set_player $PLAYER_CHAR controllable 0
 0164: disable_marker $FIRST_BLIP
 0164: disable_marker $SECOND_BLIP
