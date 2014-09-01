@@ -8,6 +8,16 @@ weather$ = ""
 carcol$ = "33 51"
 pickupamount% = 1
 reward% = 8
+
+police$ = ""
+weight$ = ""
+density$ = ""
+pickuptype$ = ""
+carhp$ = ""
+minspeed$ = ""
+riot$ = ""
+
+
 DIM startcamera(3) AS SINGLE
 DIM startlocation(4) AS SINGLE 'startangle = 4
 
@@ -27,6 +37,14 @@ INPUT #1, carname$
 INPUT #1, carcol$
 INPUT #1, weather$
 INPUT #1, type$
+INPUT #1, police$
+INPUT #1, weight$
+INPUT #1, density$
+INPUT #1, pickuptype$
+INPUT #1, carhp$
+INPUT #1, minspeed$
+INPUT #1, riot$
+INPUT #1, tempvar$
 
 _DISPLAY
 _LIMIT 3
@@ -447,6 +465,7 @@ IF type$ = "race" THEN
     PRINT #1, "0317: increment_mission_attempts "
     PRINT #1, "03A4: name_thread '" + threadname$ + "'"
     PRINT #1, ""
+    GOSUB shared_init
     PRINT #1, "    // ----------------------------------------------------------------------------------------------"
     PRINT #1, "    // -------------------R               SET VARIABLES          ------------------------------------"
     PRINT #1, "    // ----------------------------------------------------------------------------------------------"
@@ -747,7 +766,22 @@ RETURN
 
 
 
+shared_init:
+PRINT #1, "    // ----------------------------------------------------------------------------------------------"
+PRINT #1, "    // -------------------S                  SET SHARED          ------------------------------------"
+PRINT #1, "    // ----------------------------------------------------------------------------------------------"
+IF police$ = "0" THEN PRINT #1, "0004: $polmulti = 0": maxwanted% = 0
+IF police$ = "1" THEN PRINT #1, "0004: $polmulti = 0.3": maxwanted% = 2
+IF police$ = "2" THEN PRINT #1, "0004: $polmulti = 0.4": maxwanted% = 3
+IF police$ = "3" THEN PRINT #1, "0004: $polmulti = 0.7": maxwanted% = 4
+IF police$ = "4" THEN PRINT #1, "0004: $polmulti = 1.4": maxwanted% = 5
+IF police$ = "5" THEN PRINT #1, "0004: $polmulti = 1.3": maxwanted% = 6
+IF police$ = "6" THEN PRINT #1, "0004: $polmulti = 1": maxwanted% = 3
+IF police$ = "7" THEN PRINT #1, "0004: $polmulti = 3": maxwanted% = 4
+IF police$ = "8" THEN PRINT #1, "0004: $polmulti = 4": maxwanted% = 5
+IF police$ = "9" THEN PRINT #1, "0004: $polmulti = 5": maxwanted% = 6
 
+RETURN
 
 
 
