@@ -1,4 +1,4 @@
-Clinic_course,clinic,12,20,BANSHEE,33 51,WEATHER_SUNNY,race,addpolice,addweight1,1.0,corona,nocarhp,nominspeed,normalped,reserved
+Clinic_course,clinic,12,20,BANSHEE,33 51,WEATHER_SUNNY,free,addpolice,addweight1,1.0,corona,nocarhp,nominspeed,normalped,reserved
 994.1072,-80.4221,4.2526,97.7364
 917.9661,-79.6807,7.1198
 919.5564,-85.7166,-1.5846

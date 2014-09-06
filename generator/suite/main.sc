@@ -410,7 +410,7 @@ fade 1 0
 043C: set_game_sounds_fade 0
 03A4: name_thread 'MAIN' 
 //0053: create_player #NULL at 811.875 -939.9375 35.75 store_to $PLAYER_CHAR
-0053: create_player #NULL at 1000.0 0.0 80.75 store_to $PLAYER_CHAR
+0053: create_player #NULL at 811.875 -939.9375 35.75 store_to $PLAYER_CHAR
 016E: override_next_restart at 811.875 -939.9375 35.75 angle 180.0
 0171: set_player $PLAYER_CHAR z_angle_to 180.0 
 01F5: $PLAYER_ACTOR = create_emulated_actor_from_player $PLAYER_CHAR
@@ -426,7 +426,7 @@ gosub @INIT_SOUND_LOOPS
 038B: load_all_models_now 
 03AF: set_streaming 1 
 03F7: load_island_data 1
-//0417: start_mission MIS_clinic
+0417: start_mission MIS_clinic
 
 
 
@@ -450,7 +450,7 @@ while true
             end
             wait 1000 ms
             01B4: set_player $PLAYER_CHAR controllable 0
-//            0417: start_mission MIS_clinic
+            0417: start_mission MIS_clinic
         end
     end
 end // main loop that constantly runs
@@ -513,5 +513,5 @@ return
 
 
 //Missions
-{$INCLUDE PP_PATRIOT.sc} // Our new patriot mission
+{$INCLUDE PP_TESTMISSION.sc} // Our new patriot mission
 
