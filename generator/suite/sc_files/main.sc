@@ -406,32 +406,31 @@ END
 
 //-------------MAIN---------------
 043C: set_game_sounds_fade 1
-fade 1 0                    
-043C: set_game_sounds_fade 0
+fade 0 0                    
 03A4: name_thread 'MAIN' 
-//0053: create_player #NULL at 811.875 -939.9375 35.75 store_to $PLAYER_CHAR
-0053: create_player #NULL at 811.875 -939.9375 35.75 store_to $PLAYER_CHAR
-016E: override_next_restart at 811.875 -939.9375 35.75 angle 180.0
-0171: set_player $PLAYER_CHAR z_angle_to 180.0 
+0053: create_player #NULL at 825.69 -1054.18 14.19 store_to $PLAYER_CHAR
+016E: override_next_restart at 825.69 -1054.18 14.19 angle 272.91
+0171: set_player $PLAYER_CHAR z_angle_to 56.0434 
 01F5: $PLAYER_ACTOR = create_emulated_actor_from_player $PLAYER_CHAR
 01B4: set_player $PLAYER_CHAR controllable 0
 042C: set_total_missions_to 1 
 030D: set_total_mission_points_to 154 
 01F0: set_max_wanted_level_to 6
+03CB: load_scene 807.0 -937.0 36.5625
 gosub @VARIABLE_INIT
 gosub @INIT_SOUND_LOOPS
 0111: set_wasted_busted_check_to 0
 
-01B6: set_weather WEATHER_CLOUDY 
 038B: load_all_models_now 
 03AF: set_streaming 1 
 03F7: load_island_data 1
-0417: start_mission MIS_clinic
-
-
-
-
-0169: set_fade_color 1 1 1
+wait 1000 ms
+fade 1 for 1000 ms
+while fading
+    wait 0 ms
+end
+043C: set_game_sounds_fade 0
+0169: set_fade_color 0 0 0
 
 while true
     wait 1000 ms
@@ -441,76 +440,15 @@ while true
     if 
         0038: $ONMISSION == 0
     then
-        wait 1000 ms
-        if 
-            0038: $ONMISSION == 0
-        then
-            while fading
-                wait 0 ms
-            end
-            wait 1000 ms
             01B4: set_player $PLAYER_CHAR controllable 0
             0417: start_mission MIS_clinic
-        end
     end
 end // main loop that constantly runs
 
 
-:handle_idle
-
-//01EB: set_car_density_to 0.0
-//0169: set_fade_color 0 0 0
-//fade 0 for 1000 ms
-//
-//fade 1 for 1000 ms
-//0249: release_model #PATRIOT
-//03CB: load_scene 807.0 -937.0 36.5625
-//01C3: remove_references_to_car $CAR_PATRIOT
-//0247: request_model #PATRIOT
-//038B: load_all_models_now 
-//wait 100
-//0395: clear_area 1 at 812.0 -945.5 range 35.75 300 
-//00A5: create_car #PATRIOT at 812.0 -945.5 35.75 store_to $CAR_PATRIOT
-//0229: set_car $CAR_PATRIOT color_to 33 51
-//0169: set_fade_color 255 255 255
-//03CB: load_scene 807.0 -937.0 36.5625
-//    0055: put_player $PLAYER_CHAR at 811.875 -939.9375 35.75
-//0239: actor $PLAYER_ACTOR run_to 812.0 -945.5
-//01B4: set_player $PLAYER_CHAR controllable 0
-//01D5: actor $PLAYER_ACTOR go_to_and_drive_car $CAR_PATRIOT
-//wait 1000
-//00BA: print_big 'T4X4_1' time 5000 style 2  // 'PATRIOT PLAYGROUND'
-//wait 5000
-//020A: set_car $CAR_PATRIOT door_status_to CARLOCK_LOCKED
-//0169: set_fade_color 255 255 255
-//fade 0 for 1000 ms
-//043C: set_game_sounds_fade 1
-//01EB: set_car_density_to 1.0
-
 return
 
-//Main threads
-//{$INCLUDE camera.sc}   	//CAMERA
-//{$INCLUDE car_gen.sc}  	//CAR_GENERATORS
-//{$INCLUDE debug.sc}    	//DEBUG_VARIABLES - STARTER - COORDS
-//{$INCLUDE gates.sc}    	//FISH_FACTORY_GATE - DOG_FOOD_FACTORY_GATE - POLICE_GATE1 - POLICE_GATE2 - COLOMBIAN_GATE - PHILS_GATE - COLOMBIAN_GATE2
-//{$INCLUDE genstuf.sc}  	//GENSTUFF - COBBLERS - CHECK_INFO_PICKUP - CHECK_INFO_PICKUP_2 - IND_AMMU - FISH_FACTORY_GEN - TRAMP_TUNNEL - IND_SOUND - DOG_SOUND - COM_AMMU - COM_CAR_PARK
-//{$INCLUDE help.sc}	//LUIGI_MESSAGE - BIKE_HELP - PISTOL_MESSAGE - UZI_MESSAGE - IMP_EXP_PAGER - EMERGENCY_CRANE_PAGER - VAN_HEIST_GARAGE_PAGER - JOEYS_BUGGY_LOOP - TONI5_FLAMES_LOOP - BLOB_HELP_LOOP - TONI4_PAGER_LOOP - TONI5_PAGER_LOOP - CLOSE_FUZZ_DOORS - CLOSE_ASUKA1_DOOR
-//{$INCLUDE hj.sc}	//INSANE_STUNT
-//{$INCLUDE import.sc}   	//IE_GARAGE_IND - EMERGENCY_CRANE - IE_GARAGE_SUB - PACKAGE_SNIFFER
 {$INCLUDE init.sc}	//SETUP_DYNAMIC_OBJECTS - INIT_SPECIAL_OBJECTS - GARAGES_INIT - TRAFFIC_INFO - VARIABLE_INIT - INIT_MISSION_LOCATIONS - INIT_THREADS - INIT_SOUND_LOOPS
-//{$INCLUDE packages.sc}	//HIDDEN_PACKAGES
-//{$INCLUDE pickups.sc}  	//MAIN_PICKUPS - CHECK_INFO_PICKUPS
-//{$INCLUDE rampage.sc}  	//KILL_FRENZY
-//{$INCLUDE rewards.sc}  	//ALL_REWARDS
-//{$INCLUDE save.sc}     	//PORTLAND_SAVE - STAUNTON_SAVE - SSV_SAVE - PORTLAND_RESTART - STAUNTON_RESTART - SSV_RESTART
-//{$INCLUDE triggers.sc} 	//All mission triggers
-
-
-
-
-
-
 
 //Missions
 {$INCLUDE PP_TESTMISSION.sc} // Our new patriot mission
